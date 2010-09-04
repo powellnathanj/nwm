@@ -6,7 +6,7 @@ This will be my fork of dwm.  Not many changes at this point.
 A note about platforms
 ------------
 
-I have made changes so that nwm will compile on FreeBSD and Linux without making changes. 
+I have made changes so that dwm will compile on FreeBSD and Linux without making changes. 
 
 You have to set the OS flag in config.mk
 
@@ -18,8 +18,16 @@ So:
   gmake
   sudo gmake install
 
+xinerama support
+------------
 
-============================
+I removed xinerama support from my build.  I will probably add it back in at some point, but 
+I don't have a lot of use for it.
+
+
+========================================================
+########################################################
+========================================================
 
 Original README:
 
