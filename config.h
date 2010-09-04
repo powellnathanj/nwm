@@ -1,5 +1,18 @@
 /* See LICENSE file for copyright and license details. */
 
+/* depending on where we are ...*/
+#ifdef LINUX
+#undef  FF
+#define FF "firefox"
+#endif
+
+#ifdef FREEBSD
+#undef  FF
+#define FF "firefox3"
+#endif
+/* end ifdefs */
+
+
 /* appearance */
 static const char font[]            = "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*";
 static const char normbordercolor[] = "#cccccc";
@@ -47,7 +60,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "xterm", NULL };
-static const char *webcmd[]   = { "firefox", NULL };
+static const char *webcmd[]   = { FF, NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */

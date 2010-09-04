@@ -2,6 +2,23 @@ nwm - Nathan's Window Manager
 ============================
 This will be my fork of dwm.  Not many changes at this point.
 
+
+A note about platforms
+------------
+
+I have made changes so that nwm will compile on FreeBSD and Linux without making changes. 
+
+You have to set the OS flag in config.mk
+
+However, the issue becomes incompatibilities in BSD Make and Gnu Make.  In having to choose
+one, I chose Gnu's Make.  When building for FreeBSD, use `gmake` and not `make`.
+
+So:
+
+  gmake
+  sudo gmake install
+
+
 ============================
 
 Original README:
