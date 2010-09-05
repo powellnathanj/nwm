@@ -12,6 +12,8 @@
 #endif
 /* end ifdefs */
 
+static const char terminal[] = "xterm";
+static const char editor[]   = "emacs";
 
 /* appearance */
 static const char font[]            = "-*-terminus-medium-r-*-*-16-*-*-*-*-*-*-*";
@@ -59,14 +61,16 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "xterm", NULL };
+static const char *termcmd[]  = { terminal, NULL };
 static const char *webcmd[]   = { FF, NULL };
+static const char *editorcmd[]   = { editor, NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_w,      spawn,          {.v = webcmd } },
+	{ MODKEY|ShiftMask,             XK_e,      spawn,          {.v = editorcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },

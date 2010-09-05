@@ -3,7 +3,7 @@
 
 include config.mk
 
-SRC = dwm.c
+SRC = dwm.c battery_monitor.c
 OBJ = ${SRC:.c=.o}
 
 all: options dwm

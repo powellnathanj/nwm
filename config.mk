@@ -14,7 +14,7 @@ LIBS = -L/usr/lib -lc -L${X11LIB} -lX11
 
 CPPFLAGS = -DVERSION=\"${VERSION}\" 
 
-ifeq ($(OS), "LINUX")
+ifeq ($(OS),LINUX)
   MANPREFIX = ${PREFIX}/share/man
   X11INC = /usr/X11R6/include
   X11LIB = /usr/X11R6/lib
