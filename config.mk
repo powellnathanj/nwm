@@ -15,7 +15,7 @@ LIBS = -L/usr/lib -lc -L${X11LIB} -lX11
 CPPFLAGS = -DVERSION=\"${VERSION}\" 
 
 ifeq ($(OS),LINUX)
-  MANPREFIX = ${PREFIX}/share/man
+  MANPREFIX = /usr/share/man
   X11INC = /usr/X11R6/include
   X11LIB = /usr/X11R6/lib
   CFLAGS = -g -std=c99 -pedantic -Wall -O0 ${INCS} ${CPPFLAGS}
@@ -26,7 +26,7 @@ ifeq ($(OS),FREEBSD)
   MANPREFIX = ${PREFIX}/man
   X11INC = ${PREFIX}/include
   X11LIB = ${PREFIX}/lib
-  CFLAGS = -std=c99 ${INCS} ${CPPFLAGS} -D${OS}
+  CFLAGS = -std=c99 -Wall ${INCS} ${CPPFLAGS} -D${OS}
   LDFLAGS = ${LIBS}
 endif
 
